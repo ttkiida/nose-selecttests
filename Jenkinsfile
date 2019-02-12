@@ -24,12 +24,12 @@ pipeline {
                                 sh 'ls -l'
                                 sh 'cat flake8.log'
                             }
-                            step([
-                                $class: 'WarningsPublisher',
-                                consoleParsers: [
-                                    [parserName: 'Pep8']
-                                ]
-                            ])
+//                            step([
+//                                $class: 'WarningsPublisher',
+//                                consoleParsers: [
+//                                    [parserName: 'Pep8']
+//                                ]
+//                            ])
                         }
                     }
                 )
