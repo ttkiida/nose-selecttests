@@ -20,8 +20,9 @@ pipeline {
                     'Pep8': {
                         dir('.') {
                             script {
-                                sh 'flake8 . --select=E101,E113,E125,E129,E304,E7,F4,F8,N8 --max-line-length=120 || true'
+                                sh 'flake8 . --select=E101,E113,E125,E129,E304,E7,F4,F8,N8 --max-line-length=120 > flake8.log || true'
                                 sh 'ls -l'
+                                sh 'cat flake8.log'
                             }
                             step([
                                 $class: 'WarningsPublisher',
