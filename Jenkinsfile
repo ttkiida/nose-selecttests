@@ -24,6 +24,7 @@ pipeline {
                                 sh 'ls -l'
                                 sh 'cat flake8.log'
                             }
+                            recordIssues enabledForFailure: true, tool: flake8(pattern: 'flake8.log')
 //                            step([
 //                                $class: 'WarningsPublisher',
 //                                consoleParsers: [
